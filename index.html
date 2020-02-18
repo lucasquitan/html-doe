@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Doe sangue! Doe vida!</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
 </head>
 <body>
   <header>
-    <img src="logo.png" class="logo" alt="Imagem de DOE">
+    <img src="/logo.png" class="logo" alt="Imagem de DOE">
     <h2>A sua doação importa</h2>
     <p>Até 3 vidas com 1 doação.</p>
     <p>Mais de 38.000 doações são necessarias todos os dias.</p>
@@ -21,7 +21,7 @@
 
   <section class="form hide">
     <h2>Entre na lista de doadores</h2>
-    <form action="/">
+    <form action="/" method="POST">
       <input 
         type="text" 
         name="name"
@@ -45,25 +45,15 @@
     <h2>Últimos <span>doadores</span></h2>
 
     <section class="donnors">
-      <div class="donnor">
-        <div class="blood">A+</div>
-        <p>Lucas Quintanilha</p>
-      </div>
 
-      <div class="donnor">
-        <div class="blood">O-</div>
-        <p>Natacha Lima</p>
-      </div>
+      {% for donor in donnors %}
+        <div class="donnor">
+         <div class="blood">{{donor.blood}}</div>
+         <p>{{donor.name}}</p>
+       </div>
+      {%endfor%}
 
-      <div class="donnor">
-        <div class="blood">A+</div>
-        <p>Carlos Jose</p>
-      </div>
-
-      <div class="donnor">
-        <div class="blood">A+</div>
-        <p>Marilza Chaves</p>
-      </div>
+      
     </section>
   </main>
 
@@ -71,6 +61,6 @@
     Com <span>❤</span> <span class="name">Lucas Quintanilha</span> 
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
